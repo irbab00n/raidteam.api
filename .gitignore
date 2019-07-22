@@ -1,1 +1,5 @@
 node_modules/
+.env
+
+
+mythic-keystone-character-profile.json
