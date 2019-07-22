@@ -22,6 +22,8 @@ const flattenResults = results => {
 module.exports.getCharacter = (request, response) => {
   const { characterName, realmSlug } = request.query;
 
+  console.log('~*~*~*~ Running the getCharacter method ~*~*~*~');
+
   Promise.all([
     this.getCharacterProfile(characterName, realmSlug),
     this.getCharacterMedia(characterName, realmSlug),
