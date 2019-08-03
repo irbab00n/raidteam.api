@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc",
     "prestart": "npm run build",
-    "start": "npm run build & node dist/src/index.js",
+    "start": "node dist/",
     "start:dev": "nodemon -r dotenv/config src/index.ts"
   },
   "dependencies": {
