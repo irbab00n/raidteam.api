@@ -1,9 +1,11 @@
-const blizzardController = require('../../controllers/blizzard');
+import * as blizzardController from '../../controllers/blizzard';
 
-module.exports = [
+const routes = [
   {
     verb: 'get',
     endpoint: '/blizzard/character',
     controller: blizzardController.getCharacter
   },
 ];
+
+export default routes;
