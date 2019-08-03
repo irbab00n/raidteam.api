@@ -8,8 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "prestart": "npm run build",
-    "start": "node dist/",
+    "start": "npm run build & node dist/",
     "start:dev": "nodemon -r dotenv/config src/index.ts"
   },
   "dependencies": {
