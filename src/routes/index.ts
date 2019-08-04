@@ -11,8 +11,11 @@ Shape of the Route object:
 
 */
 // for each collection of route objects, concat them together and export them
-import blizzard from './blizzard';
+import blizzard from './blizzard'
 
-const fullRoutes = [blizzard].reduce((collected, routes) => collected.concat(routes), []);
+const fullRoutes = [blizzard].reduce(
+  (collected, routes) => collected.concat(routes),
+  []
+)
 
-export default fullRoutes;
+export default fullRoutes

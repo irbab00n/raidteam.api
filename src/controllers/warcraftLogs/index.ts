@@ -1,9 +1,9 @@
-const axios = require("axios");
+const axios = require('axios')
 
 // TODO: If we go to support mult-regions, we will need to change this later on
-const _region = "US";
-const apiBase = "https://www.warcraftlogs.com:443/v1";
-const apiKey = process.env.WARCRAFT_LOGS_API_KEY;
+const _region = 'US'
+const apiBase = 'https://www.warcraftlogs.com:443/v1'
+const apiKey = process.env.WARCRAFT_LOGS_API_KEY
 
 // available API's
 // API BAsE = https://www.warcraftlogs.com:443/v1

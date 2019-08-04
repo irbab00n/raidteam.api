@@ -1,3 +1,3 @@
-export const blizzard: {[key: string]: string} = {
-  character: 'profile/wow/character'
-};
+export const blizzard: { [key: string]: string } = {
+  character: 'profile/wow/character',
+}

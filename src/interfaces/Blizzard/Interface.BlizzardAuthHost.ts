@@ -1,3 +1,3 @@
 export interface BlizzardAuthHost {
-  tokenHost: string;
+  tokenHost: string
 }

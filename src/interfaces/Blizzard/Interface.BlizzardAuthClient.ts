@@ -1,4 +1,4 @@
 export interface BlizzardAuthClient {
-  id: string;
-  secret: string;
+  id: string
+  secret: string
 }

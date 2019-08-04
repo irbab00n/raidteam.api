@@ -1,11 +1,11 @@
-import * as blizzardController from '../../controllers/blizzard';
+import * as blizzardController from '../../controllers/blizzard'
 
 const routes = [
   {
     verb: 'get',
     endpoint: '/blizzard/character',
-    controller: blizzardController.getCharacter
+    controller: blizzardController.getCharacter,
   },
-];
+]
 
-export default routes;
+export default routes
