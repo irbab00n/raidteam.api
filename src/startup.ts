@@ -63,41 +63,41 @@ const searchDirectoryForStartup = (
 ) => {
   if (options.verbose) {
     console.log(
-      `${consoleKey} searchDirectoryForStartup --- Resolving directory path for controller module:\n\n  ${directory}\n`
+      `${consoleKey}: searchDirectoryForStartup --- Resolving directory path for controller module:\n\n  ${directory}\n`
     );
   }
   // Construct the directory path from the supplied string
   const directoryPath = path.resolve(__dirname, 'controllers', directory);
   if (options.verbose) {
     console.log(
-      `${consoleKey} searchDirectoryForStartup --- Directory path for the current controller:\n\n  ${directoryPath}\n`
+      `${consoleKey}: searchDirectoryForStartup --- Directory path for the current controller:\n\n  ${directoryPath}\n`
     );
     console.log(
-      `${consoleKey} searchDirectoryForStartup --- Retriving all content for the ${directory} controller...`
+      `${consoleKey}: searchDirectoryForStartup --- Retriving all content for the ${directory} controller...`
     );
   }
   // Read the content within the directoryPath
   const directoryRead = readdirSync(directoryPath);
   if (options.verbose) {
     console.log(
-      `${consoleKey} searchDirectoryForStartup --- Directory root filenames retrieved from ${directory} controller:\n\n  ${directoryRead}\n`
+      `${consoleKey}: searchDirectoryForStartup --- Directory root filenames retrieved from ${directory} controller:\n\n  ${directoryRead}\n`
     );
     console.log(
-      `${consoleKey} searchDirectoryForStartup --- Calling the testFilesForStartupScript function with the list of file names retrieved...`
+      `${consoleKey}: searchDirectoryForStartup --- Calling the testFilesForStartupScript function with the list of file names retrieved...`
     );
   }
   // Test the list of files produced above to see if it contains a start up script
   let startupSearchResult = testFilesForStartupScript(directoryRead);
   if (options.verbose) {
     console.log(
-      `${consoleKey} searchDirectoryForStartup --- Result of the testFilesForStartupScript function:\n\n  ${startupSearchResult}\n`
+      `${consoleKey}: searchDirectoryForStartup --- Result of the testFilesForStartupScript function:\n\n  ${startupSearchResult}\n`
     );
   }
   // If the test found a filename, use the string name to import the file, running the startup script
   if (typeof startupSearchResult === 'string') {
     if (options.verbose) {
       console.log(
-        `${consoleKey} searchDirectoryForStartup --- Startup script was found... importing to initialze...`
+        `${consoleKey}: searchDirectoryForStartup --- Startup script was found... importing to initialze...`
       );
     }
     require(`${directoryPath}/${startupSearchResult}`);
@@ -129,36 +129,36 @@ const searchDirectoryForStartup = (
 const startup = (options: StartupOptions = _defaultStartupOptions) => {
   if (options.verbose) {
     console.log(
-      `${consoleKey} startup --- Startup script beginning start up sequence...`
+      `${consoleKey}: startup --- Startup script beginning start up sequence...`
     );
     console.log(
-      `${consoleKey} startup --- Resolving the path of the controllers module...`
+      `${consoleKey}: startup --- Resolving the path of the controllers module...`
     );
   }
   // Construct the directory path to the controllers directory
   const controllerPath = path.resolve(__dirname, 'controllers');
   if (options.verbose) {
     console.log(
-      `${consoleKey} startup --- Resolved controller path:\n\n  ${controllerPath}\n`
+      `${consoleKey}: startup --- Resolved controller path:\n\n  ${controllerPath}\n`
     );
     console.log(
-      `${consoleKey} startup --- Retrieving all content from the controllers module...`
+      `${consoleKey}: startup --- Retrieving all content from the controllers module...`
     );
   }
   // Read the content within the controllerPath
   const directoryRead = readdirSync(controllerPath);
   if (options.verbose) {
     console.log(
-      `${consoleKey} startup --- Directory names retrieved from the controllers module:\n\n  ${directoryRead}\n`
+      `${consoleKey}: startup --- Directory names retrieved from the controllers module:\n\n  ${directoryRead}\n`
     );
     console.log(
-      `${consoleKey} startup --- Begin looking in each directory to see if it contains a start up script...`
+      `${consoleKey}: startup --- Begin looking in each directory to see if it contains a start up script...`
     );
   }
   // For each one of the controllers, search for the startup script and run it
   directoryRead.forEach((directory: string) => {
     console.log(
-      `${consoleKey} startup --- Calling the searchDirectoryForStartup function with directory:\n\n  ${directory}\n`
+      `${consoleKey}: startup --- Calling the searchDirectoryForStartup function with directory:\n\n  ${directory}\n`
     );
     searchDirectoryForStartup(directory, options);
   });
