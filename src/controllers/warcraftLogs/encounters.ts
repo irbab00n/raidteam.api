@@ -1,6 +1,5 @@
 // WIll manage all of the encounters data for the Warcraft Logs controller module
 // Use the /zones API endpoint to be able to find all of the encounter information for each one of the dungeons
-import express from 'express';
 import axios from 'axios';
 
 const consoleKey = '~*~ Warcraft Logs Controller';
@@ -14,7 +13,7 @@ export const getEncounters = () => {
   // if the encounters have already been retrieved, return them
   if (encounters !== null) {
     console.log(
-      `${consoleKey} --- Zones data has already been retrieved, returning them directly...`
+      `${consoleKey}: getEncounters --- Zones data has already been retrieved, returning them directly...`
     );
     return Promise.resolve(encounters);
   }
