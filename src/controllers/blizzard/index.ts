@@ -143,8 +143,8 @@ export const getCharacterStatistics = (
   });
 };
 
-console.log(
-  '\nWho dat?\n\nBlizzard controller module reporting in: ',
-  this,
-  '\n'
-);
+// console.log(
+//   '\nWho dat?\n\nBlizzard controller module reporting in: ',
+//   this,
+//   '\n'
+// );
