@@ -1,13 +1,12 @@
-const axios = require('axios');
+const axios = require("axios");
 
 // TODO: If we go to support mult-regions, we will need to change this later on
-const _region = 'US';
-const apiBase = 'https://www.warcraftlogs.com:443/v1';
-const apiKey = process.env.WARCRAFT_LOGS_API_KEY
+const _region = "US";
+const apiBase = "https://www.warcraftlogs.com:443/v1";
+const apiKey = process.env.WARCRAFT_LOGS_API_KEY;
 
 // available API's
 // API BAsE = https://www.warcraftlogs.com:443/v1
-
 
 // PARSES
 // endpoint /parses/character/{characterName}/{realmSlug}/{region}?api_key=a021801b56262bb5bfc9e527c2f773ab
@@ -50,7 +49,6 @@ const apiKey = process.env.WARCRAFT_LOGS_API_KEY
     - partition	-- The partition group to query for. Most zones have only one partition, and this can be omitted. Hellfire Citadel has two partitions (1 for original, 2 for pre-patch). Highmaul and BRF have two partitions (1 for US/EU, 2 for Asia).	query	integer
     - timeframe -- Whether to compare against today's rankings or to return historical information (where the rank was back when it was earned. The accepted values are 'today' and 'historical', with the default being 'today'.
 */
-
 
 // get encounters
 // retrieves the encounters for the front end to use within the UI
