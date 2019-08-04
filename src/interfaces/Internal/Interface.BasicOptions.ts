@@ -1,3 +1,3 @@
 export interface BasicOptions {
-  verbose?: boolean
+  verbose?: boolean;
 }

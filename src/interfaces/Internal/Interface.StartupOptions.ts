@@ -1,3 +1,3 @@
-import { BasicOptions } from './Interface.BasicOptions'
+import { BasicOptions } from './Interface.BasicOptions';
 
 export interface StartupOptions extends BasicOptions {}

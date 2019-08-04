@@ -1,4 +1,4 @@
-import * as blizzardController from '../../controllers/blizzard'
+import * as blizzardController from '../../controllers/blizzard';
 
 const routes = [
   {
@@ -6,6 +6,6 @@ const routes = [
     endpoint: '/blizzard/character',
     controller: blizzardController.getCharacter,
   },
-]
+];
 
-export default routes
+export default routes;

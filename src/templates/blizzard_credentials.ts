@@ -1,4 +1,4 @@
-import { BlizzardAuthCredentials } from '../interfaces/Blizzard/Interface.BlizzardAuthCredentials'
+import { BlizzardAuthCredentials } from '../interfaces/Blizzard/Interface.BlizzardAuthCredentials';
 
 const blizzard_credentials: BlizzardAuthCredentials = {
   client: {
@@ -8,6 +8,6 @@ const blizzard_credentials: BlizzardAuthCredentials = {
   auth: {
     tokenHost: 'https://us.battle.net',
   },
-}
+};
 
-export default blizzard_credentials
+export default blizzard_credentials;
