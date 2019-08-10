@@ -28,7 +28,7 @@ const _getCharacterDefaultOptions = {
 export const getCharacter = (
   request: express.Request,
   response: express.Response,
-  options: GetCharacterOptions = _getCharacterDefaultOptions
+  options: GetCharacterOptions = _getCharacterDefaultOptions // TODO:  Remove this, the options aren't sent
 ) => {
   const { characterName, realmSlug } = request.query;
   const { verbose } = options;

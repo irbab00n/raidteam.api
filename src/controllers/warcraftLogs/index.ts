@@ -1,9 +1,32 @@
-const axios = require('axios');
+import express from 'express';
+import { getRankingsForCharacter } from './rankings';
 
-// TODO: If we go to support mult-regions, we will need to change this later on
-const _region = 'US';
-const apiBase = 'https://www.warcraftlogs.com:443/v1';
-const apiKey = process.env.WARCRAFT_LOGS_API_KEY;
+const ERR_NO_CHAR_NAME_SUPPLIED: string =
+  'Error: No Character Name was supplied to a method that required one be sent in the request';
+const ERR_NO_REALM_SLUG_SUPPLIED: string =
+  'Error: No Realm Slug was supplied to a method that required one be sent in the request';
+
+const _getCharacterRankingsDefaultOptions = {
+  verbose: false,
+};
+
+export const getCharacterRankings = (
+  request: express.Request,
+  response: express.Response
+) => {
+  const { characterName, realmSlug } = request.query;
+
+  if (!characterName) response.status(400).send(ERR_NO_CHAR_NAME_SUPPLIED);
+  if (!realmSlug) response.status(400).send(ERR_NO_REALM_SLUG_SUPPLIED);
+
+  getRankingsForCharacter(characterName, realmSlug)
+    .then((results: any) => {
+      response.status(200).send(results);
+    })
+    .catch((error: any) => {
+      console.log('getRankingsForCharacter failed with error: ', error);
+    });
+};
 
 // available API's
 // API BAsE = https://www.warcraftlogs.com:443/v1

@@ -7,7 +7,7 @@ const consoleKey = '~*~ Warcraft Logs Controller';
 const WARCRAFT_LOGS_API_KEY = process.env.WARCRAFT_LOGS_API_KEY;
 
 // TODO define the types for encounters
-var encounters: any = null;
+export var encounters: any = null;
 
 export const getEncounters = () => {
   // if the encounters have already been retrieved, return them
@@ -22,7 +22,7 @@ export const getEncounters = () => {
   return axios
     .get(fullLink)
     .then((results: any) => {
-      return results;
+      return results.data;
     })
     .catch((error: any) => {
       console.error(

@@ -1,4 +1,4 @@
-import * as blizzardController from '../../controllers/blizzard';
+import * as blizzardController from '../controllers/blizzard';
 
 const routes = [
   {
