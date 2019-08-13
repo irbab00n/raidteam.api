@@ -19,12 +19,21 @@ export const getCharacterRankings = (
   if (!characterName) response.status(400).send(ERR_NO_CHAR_NAME_SUPPLIED);
   if (!realmSlug) response.status(400).send(ERR_NO_REALM_SLUG_SUPPLIED);
 
+  console.log(
+    '~*~ Warcraft Logs Controller: getCharacterRankings --- Starting the getRankingsForCharacter method...\n\n'
+  );
+
   getRankingsForCharacter(characterName, realmSlug)
     .then((results: any) => {
+      console.log(
+        '~*~ Warcraft Logs Controller: getCharacterRankings --- Character rankings successfully retrieved:\n\n',
+        results
+      );
       response.status(200).send(results);
     })
     .catch((error: any) => {
       console.log('getRankingsForCharacter failed with error: ', error);
+      response.status(400).send(error);
     });
 };
 

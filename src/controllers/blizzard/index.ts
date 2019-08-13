@@ -61,7 +61,7 @@ export const getCharacterProfile = (
   characterName: string,
   realmSlug: string
 ) => {
-  return getToken({ verbose: true }).then((access_token: string) => {
+  return getToken({ verbose: false }).then((access_token: string) => {
     let fullLink = `https://${region}.${blizzard_api}/${blizzardApiPaths.character}/${realmSlug}/${characterName}?namespace=profile-us`;
     let config = createAuthHeaders(access_token);
     return axios.get(fullLink, config).then(result => {
@@ -73,7 +73,7 @@ export const getCharacterProfile = (
 // grabs the access token and gets character media
 export const getCharacterMedia = (characterName: string, realmSlug: string) => {
   const endpoint = 'character-media';
-  return getToken({ verbose: true }).then((access_token: string) => {
+  return getToken({ verbose: false }).then((access_token: string) => {
     let fullLink = `https://${region}.${blizzard_api}/${blizzardApiPaths.character}/${realmSlug}/${characterName}/${endpoint}?namespace=profile-us`;
     let config = createAuthHeaders(access_token);
     return axios.get(fullLink, config).then(result => {
@@ -88,7 +88,7 @@ export const getCharacterEquipment = (
   realmSlug: string
 ) => {
   const endpoint = 'equipment';
-  return getToken({ verbose: true }).then((access_token: string) => {
+  return getToken({ verbose: false }).then((access_token: string) => {
     let fullLink = `https://${region}.${blizzard_api}/${blizzardApiPaths.character}/${realmSlug}/${characterName}/${endpoint}?namespace=profile-us`;
     let config = createAuthHeaders(access_token);
     return axios.get(fullLink, config).then(result => {
@@ -103,7 +103,7 @@ export const getCharacterRaidProgression = (
   realmSlug: string
 ) => {
   // const endpoint = 'raid-progression';
-  return getToken({ verbose: true }).then((access_token: string) => {
+  return getToken({ verbose: false }).then((access_token: string) => {
     // let fullLink = `https://${region}.${blizzard_api}/${blizzardApiPaths.character}/${realmSlug}/${characterName}/${endpoint}?namespace=profile-us`;
     let fullLink = `https://${region}.${blizzard_api}/wow/character/${realmSlug}/${characterName}?fields=progression`;
     let config = createAuthHeaders(access_token);
@@ -119,7 +119,7 @@ export const getCharacterSpecialization = (
   realmSlug: string
 ) => {
   const endpoint = 'specializations';
-  return getToken({ verbose: true }).then((access_token: string) => {
+  return getToken({ verbose: false }).then((access_token: string) => {
     let fullLink = `https://${region}.${blizzard_api}/${blizzardApiPaths.character}/${realmSlug}/${characterName}/${endpoint}?namespace=profile-us`;
     let config = createAuthHeaders(access_token);
     return axios.get(fullLink, config).then(result => {
@@ -134,7 +134,7 @@ export const getCharacterStatistics = (
   realmSlug: string
 ) => {
   const endpoint = 'statistics';
-  return getToken({ verbose: true }).then((access_token: string) => {
+  return getToken({ verbose: false }).then((access_token: string) => {
     let fullLink = `https://${region}.${blizzard_api}/${blizzardApiPaths.character}/${realmSlug}/${characterName}/${endpoint}?namespace=profile-us`;
     let config = createAuthHeaders(access_token);
     return axios.get(fullLink, config).then(result => {
